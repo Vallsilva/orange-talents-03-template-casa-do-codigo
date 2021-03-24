@@ -1,23 +1,22 @@
 package br.com.zupacademy.valeria.casadocodigo.controller;
 
+import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Column;
+import javax.validation.constraints.*;
 
 public class AutorRequest {
 
-    @NotNull @NotEmpty
+    @NotBlank
      private String nome;
-    @Email @NotEmpty @NotNull
+    @Email @NotBlank @UniqueValue(domainClass = Autor.class, fieldName = "email")
      private String email;
-    @NotNull @NotEmpty @Size(max = 400)
+    @NotBlank @Size(max = 400)
      private String descricao;
 
-    public AutorRequest(@NotNull @NotEmpty String nome, @Email @NotEmpty @NotNull String email,
-                        @NotNull @NotEmpty @Size(max = 400) String descricao) {
+    public AutorRequest(@NotBlank String nome, @Email @NotBlank String email,
+                        @NotBlank @Size(max = 400) String descricao) {
         this.nome = nome;
         this.email = email;
         this.descricao = descricao;
@@ -25,5 +24,17 @@ public class AutorRequest {
 
     public Autor converter(){
         return new Autor(this.nome, this.email, this.descricao);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 }

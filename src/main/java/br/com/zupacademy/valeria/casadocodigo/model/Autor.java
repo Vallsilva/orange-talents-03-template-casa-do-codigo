@@ -1,14 +1,10 @@
 package br.com.zupacademy.valeria.casadocodigo.model;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,7 +12,10 @@ public class Autor {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
+    @Column(unique = true)
     private String email;
     private String descricao;
     private LocalDateTime dataRegistro = LocalDateTime.now();
