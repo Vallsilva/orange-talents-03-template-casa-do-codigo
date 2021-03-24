@@ -18,9 +18,14 @@ public class AutorController {
     private AutorRepository autorRepository;
 
     @PostMapping
-    public ResponseEntity<Autor> cadastraAutor(@Valid @RequestBody Autor autor){
+    public ResponseEntity<AutorResponse> cadastraAutor(@Valid @RequestBody AutorRequest autorRequest){
+
+        Autor autor = autorRequest.converter();
+
         autorRepository.save(autor);
-        return ResponseEntity.ok(autor);
+        AutorResponse autorDto = new AutorResponse(autor);
+
+        return ResponseEntity.ok(autorDto);
     }
 
 
