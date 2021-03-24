@@ -21,8 +21,8 @@ public class AutorController {
     public ResponseEntity<AutorResponse> cadastraAutor(@Valid @RequestBody AutorRequest autorRequest){
         Autor autor = autorRequest.converter();
         autorRepository.save(autor);
-        AutorResponse autorDto = new AutorResponse(autor);
-        return ResponseEntity.ok(autorDto);
+        AutorResponse autorResponse = new AutorResponse(autor);
+        return ResponseEntity.ok(autorResponse);
 
     }
 
