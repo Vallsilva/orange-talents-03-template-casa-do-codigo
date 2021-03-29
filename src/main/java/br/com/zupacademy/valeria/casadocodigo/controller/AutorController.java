@@ -1,5 +1,7 @@
 package br.com.zupacademy.valeria.casadocodigo.controller;
 
+import br.com.zupacademy.valeria.casadocodigo.controller.request.AutorRequest;
+import br.com.zupacademy.valeria.casadocodigo.controller.response.AutorResponse;
 import br.com.zupacademy.valeria.casadocodigo.repository.AutorRepository;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
 import org.springframework.beans.factory.annotation.Autowired;

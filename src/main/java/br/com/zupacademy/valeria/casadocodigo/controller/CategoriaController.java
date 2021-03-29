@@ -1,9 +1,10 @@
 package br.com.zupacademy.valeria.casadocodigo.controller;
 
+import br.com.zupacademy.valeria.casadocodigo.controller.request.CategoriaRequest;
+import br.com.zupacademy.valeria.casadocodigo.controller.response.CategoriaResponse;
 import br.com.zupacademy.valeria.casadocodigo.model.Categoria;
 import br.com.zupacademy.valeria.casadocodigo.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;

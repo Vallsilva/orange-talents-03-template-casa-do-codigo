@@ -1,17 +1,16 @@
 package br.com.zupacademy.valeria.casadocodigo.configure;
 
-
 import org.springframework.util.Assert;
 
-import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.List;
+import java.util.Optional;
 
-
-public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Object> {
+public class MustExistOnDatabaseValidator implements ConstraintValidator<MustExistOnDatabase, Object> {
 
     @PersistenceContext
     private EntityManager em;
@@ -20,10 +19,9 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
     private Class<?> domainClass;
 
     @Override
-    public void initialize(UniqueValue params) {
+    public void initialize(MustExistOnDatabase params) {
         fieldName = params.fieldName();
         domainClass = params.domainClass();
-
     }
 
     @Override
@@ -31,8 +29,8 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
 
         Query query = em.createQuery("SELECT 1 FROM " + domainClass.getName() + " WHERE " + fieldName + " = :value");
         query.setParameter("value", value);
-        List<?> resultList = query.getResultList();
+        Optional<?> resultList = query.getResultList().stream().findFirst();
 
-        return resultList.isEmpty();
+        return resultList.isPresent();
     }
 }

@@ -1,4 +1,4 @@
-package br.com.zupacademy.valeria.casadocodigo.controller;
+package br.com.zupacademy.valeria.casadocodigo.controller.response;
 
 import br.com.zupacademy.valeria.casadocodigo.model.Categoria;
 

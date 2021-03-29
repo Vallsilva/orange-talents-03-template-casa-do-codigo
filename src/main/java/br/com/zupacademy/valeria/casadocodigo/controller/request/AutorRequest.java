@@ -1,4 +1,4 @@
-package br.com.zupacademy.valeria.casadocodigo.controller;
+package br.com.zupacademy.valeria.casadocodigo.controller.request;
 
 import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
