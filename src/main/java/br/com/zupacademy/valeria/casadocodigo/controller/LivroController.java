@@ -1,7 +1,7 @@
 package br.com.zupacademy.valeria.casadocodigo.controller;
 
 
-import br.com.zupacademy.valeria.casadocodigo.controller.request.CategoriaRequest;
+
 import br.com.zupacademy.valeria.casadocodigo.controller.request.LivroRequest;
 import br.com.zupacademy.valeria.casadocodigo.controller.response.LivroResponse;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
@@ -12,14 +12,12 @@ import br.com.zupacademy.valeria.casadocodigo.repository.CategoriaRepository;
 import br.com.zupacademy.valeria.casadocodigo.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Stream;
 
 
 @RestController
@@ -32,6 +30,13 @@ public class LivroController {
     private CategoriaRepository categoriaRepository;
     @Autowired
     private AutorRepository autorRepository;
+
+    @GetMapping
+    public Stream<LivroResponse> listaLivros(){
+        List<Livro> livros = livroRepository.findAll();
+        LivroResponse listaResposta = new LivroResponse();
+        return listaResposta.converter(livros);
+    }
 
     @PostMapping
     public LivroResponse salvarLivro(@RequestBody @Valid LivroRequest livroRequest){

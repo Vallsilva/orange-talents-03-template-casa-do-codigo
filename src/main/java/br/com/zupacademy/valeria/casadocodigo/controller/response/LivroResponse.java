@@ -6,6 +6,8 @@ import br.com.zupacademy.valeria.casadocodigo.model.Livro;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class LivroResponse {
 
@@ -20,6 +22,9 @@ public class LivroResponse {
     private Categoria categoria;
     private Autor autor;
 
+    public LivroResponse() {
+    }
+
     public LivroResponse(Livro livro) {
         this.titulo = livro.getTitulo();
         this.resumo = livro.getResumo();
@@ -30,6 +35,11 @@ public class LivroResponse {
         this.dataPublicacao = livro.getDataPublicacao();
         this.categoria = livro.getCategoria();
         this.autor = livro.getAutor();
+    }
+
+    public Stream<LivroResponse> converter(List<Livro> livros){
+        Stream<LivroResponse> livroResponses = livros.stream().map(LivroResponse::new);
+        return livroResponses;
     }
 
     public String getTitulo() {
