@@ -1,7 +1,5 @@
-package br.com.zupacademy.valeria.casadocodigo.configure;
+package br.com.zupacademy.valeria.casadocodigo.configure.anotations;
 
-
-import org.springframework.util.Assert;
 
 import javax.persistence.Query;
 import javax.persistence.EntityManager;

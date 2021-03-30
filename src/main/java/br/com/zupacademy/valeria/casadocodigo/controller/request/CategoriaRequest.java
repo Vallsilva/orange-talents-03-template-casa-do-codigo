@@ -1,6 +1,6 @@
 package br.com.zupacademy.valeria.casadocodigo.controller.request;
 
-import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
+import br.com.zupacademy.valeria.casadocodigo.configure.anotations.UniqueValue;
 import br.com.zupacademy.valeria.casadocodigo.model.Categoria;
 
 public class CategoriaRequest {

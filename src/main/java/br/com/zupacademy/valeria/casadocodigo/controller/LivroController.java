@@ -1,7 +1,7 @@
 package br.com.zupacademy.valeria.casadocodigo.controller;
 
 
-
+import br.com.zupacademy.valeria.casadocodigo.controller.request.CategoriaRequest;
 import br.com.zupacademy.valeria.casadocodigo.controller.request.LivroRequest;
 import br.com.zupacademy.valeria.casadocodigo.controller.response.LivroResponse;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.stream.Stream;
 
 
 @RestController
@@ -31,11 +30,13 @@ public class LivroController {
     @Autowired
     private AutorRepository autorRepository;
 
-    @GetMapping
-    public Stream<LivroResponse> listaLivros(){
+    @GetMapping()
+    public List<LivroResponse> listaLivros(){
         List<Livro> livros = livroRepository.findAll();
-        LivroResponse listaResposta = new LivroResponse();
-        return listaResposta.converter(livros);
+        LivroResponse livroResponse = new LivroResponse();
+        return livroResponse.converter(livros);
+
+
     }
 
     @PostMapping

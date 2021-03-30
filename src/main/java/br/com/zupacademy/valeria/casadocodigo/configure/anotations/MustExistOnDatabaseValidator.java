@@ -1,13 +1,10 @@
-package br.com.zupacademy.valeria.casadocodigo.configure;
-
-import org.springframework.util.Assert;
+package br.com.zupacademy.valeria.casadocodigo.configure.anotations;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.List;
 import java.util.Optional;
 
 public class MustExistOnDatabaseValidator implements ConstraintValidator<MustExistOnDatabase, Object> {

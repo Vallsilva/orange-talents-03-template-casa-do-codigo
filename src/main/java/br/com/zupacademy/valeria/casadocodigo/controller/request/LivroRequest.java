@@ -1,8 +1,8 @@
 package br.com.zupacademy.valeria.casadocodigo.controller.request;
 
 
-import br.com.zupacademy.valeria.casadocodigo.configure.MustExistOnDatabase;
-import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
+import br.com.zupacademy.valeria.casadocodigo.configure.anotations.MustExistOnDatabase;
+import br.com.zupacademy.valeria.casadocodigo.configure.anotations.UniqueValue;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
 import br.com.zupacademy.valeria.casadocodigo.model.Categoria;
 import br.com.zupacademy.valeria.casadocodigo.model.Livro;

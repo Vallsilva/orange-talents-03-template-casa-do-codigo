@@ -1,9 +1,8 @@
 package br.com.zupacademy.valeria.casadocodigo.controller.request;
 
-import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
+import br.com.zupacademy.valeria.casadocodigo.configure.anotations.UniqueValue;
 import br.com.zupacademy.valeria.casadocodigo.model.Autor;
 
-import javax.persistence.Column;
 import javax.validation.constraints.*;
 
 public class AutorRequest {

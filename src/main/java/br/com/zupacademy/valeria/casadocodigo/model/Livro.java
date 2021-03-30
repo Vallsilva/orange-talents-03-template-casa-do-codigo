@@ -1,6 +1,5 @@
 package br.com.zupacademy.valeria.casadocodigo.model;
 
-import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;

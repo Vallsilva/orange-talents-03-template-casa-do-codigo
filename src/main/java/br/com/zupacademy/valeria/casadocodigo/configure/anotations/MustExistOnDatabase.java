@@ -1,4 +1,4 @@
-package br.com.zupacademy.valeria.casadocodigo.configure;
+package br.com.zupacademy.valeria.casadocodigo.configure.anotations;
 
 
 import javax.validation.Constraint;

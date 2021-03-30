@@ -1,9 +1,9 @@
 package br.com.zupacademy.valeria.casadocodigo.model;
 
-import br.com.zupacademy.valeria.casadocodigo.configure.UniqueValue;
+
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+
 
 import java.time.LocalDateTime;
 
