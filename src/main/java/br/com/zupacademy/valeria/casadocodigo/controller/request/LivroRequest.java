@@ -48,8 +48,7 @@ public class LivroRequest {
         this.dataPublicacao = dataPublicacao;
         this.categoriaId = categoriaId;
         this.autorId = autorId;
-        System.out.println(categoriaId);
-        System.out.println(autorId);
+
     }
 
     public Livro converter(Autor autor, Categoria categoria){
