@@ -1,14 +1,9 @@
 package br.com.zupacademy.valeria.casadocodigo.repository;
 
-import br.com.zupacademy.valeria.casadocodigo.model.Pais;
-
+import br.com.zupacademy.valeria.casadocodigo.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
-
 @Repository
-public interface PaisRepository extends JpaRepository<Pais, Long> {
-
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 }
